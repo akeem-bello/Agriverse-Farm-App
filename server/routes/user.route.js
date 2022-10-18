@@ -1,0 +1,17 @@
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/user.controller');
+router.post('/farmer/signup', userController.registerFarmer);
+router.post('/farmer/signin', userController.farmerSignIn);
+router.get('/farmer/dashboard', userController.getFarmerDashboard);
+router.post('/farmer/dashboard', userController.uploadFarmProduce);
+router.post('/exporter/signup', userController.registerExporter);
+router.post('/exporter/signin', userController.exporterSignIn);
+router.get('/exporter/dashboard', userController.getExporterDashboard);
+router.post('/exporter/dashboard', userController.uploadExporterOrder);
+router.get('/admin/produce', userController.displayProduce);
+router.post('/admin/produce', userController.deleteProduce);
+router.get('/admin/orders', userController.displayOrders);
+router.post('/contact', userController.uploadMessages);
+router.get('/admin/messages', userController.displayMessages);
+module.exports = router;
