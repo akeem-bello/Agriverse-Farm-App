@@ -28,9 +28,8 @@ const FarmerDashboard = ()=>{
       }}).then((res)=>{
         if(!res.data.status){
             localStorage.removeItem('token')
-            navigate('/farner/signin')
+            navigate('/farmer/signin')
         }else{
-            console.log(res)
             setfarmerDetails(res.data.result)
         }
       })
@@ -90,23 +89,22 @@ const FarmerDashboard = ()=>{
   }
   
   let trStyle = {
-    backgroundColor: '#F0E6E6'
+    backgroundColor: 'grey'
   }
   return (
     <div style={{paddingBottom:'4%'}}>
       
       <div className="container">
-        <div>
-        <div style={{marginTop:'20px', marginLeft:'1200px'}}><button className='btn btn-secondary' onClick={logout}>Log Out</button></div>
-          <div className="row mb-5">
-            <div className="col-9 mt-2">
-            <h4 style={{marginBottom:'20px'}}>Welcome, {farmerDetails.firstName}.</h4>
-            <p style={{fontSize:'18px'}}>We are glad to have you at Agriverse, and we hope we have a longlasting business relationship with you.</p>
-            <p style={{fontSize:'18px'}}>Kindly let us know the quantity of harvested farm produce you have by filling the form below. Once you<br/> are done filling, please click on the submit button and we will reach out to you in less than an hour.</p>
-            <p style={{fontSize:'18px'}}>We pride ourselves with swift response and business conclusions, so, our trucks will get to your farm within<br/> <strong>48 hours</strong> of filling this form.</p>
-            </div>
-          </div>
+        <div style={{marginTop:'20px'}}>
+          <button className='btn btn-dark' onClick={logout}>Log Out</button>
         </div>
+        <div style={{textAlign: 'center', marginTop: '20px', marginBottom: '40px'}}>
+            <h4 style={{marginBottom:'20px'}}>Welcome, {farmerDetails.firstName}.</h4>
+            <p>We are glad to have you at Agriverse, and we hope we have a longlasting business relationship with you.</p>
+            <p>Kindly let us know the quantity of harvested farm produce you have by filling the form below. Once you<br/> are done filling, please click on the submit button and we will reach out to you in less than an hour.</p>
+            <p>We pride ourselves with swift response and business conclusions, so, our trucks will get to your farm within<br/> <strong>48 hours</strong> of filling this form.</p>
+            </div>
+        
         
         <div>{message}</div>
         <table style={tableStyle}>

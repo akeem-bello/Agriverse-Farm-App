@@ -30,7 +30,6 @@ const ExporterDashboard = ()=>{
             localStorage.removeItem('token2')
             navigate('/exporter/signin')
         }else{
-            console.log(res)
             setexporterDetails(res.data.result)
         }
       })
@@ -87,22 +86,22 @@ const ExporterDashboard = ()=>{
   }
   
   let trStyle = {
-    backgroundColor: '#F0E6E6'
+    backgroundColor: 'grey'
   }
   return (
     <div style={{paddingBottom:'4%'}}>
       <div className="container">
         <div>
-        <div style={{marginTop:'20px', marginLeft:'1200px'}}><button className='btn btn-secondary' onClick={logout}>Log Out</button></div>
-        <div className="row mb-5">
-          <div className="col-9 mt-2">
-            <h4 style={{marginBottom:'20px'}}>Welcome, {exporterDetails.companyName}.</h4>
-            <p style={{fontSize:'18px'}}>We are glad to have you at Agriverse, and we hope we have a longlasting business relationship with you.</p>
-            <p style={{fontSize:'18px'}}>Below are the current prices of the farm produce we are into, kindly let us know the quantity of each<br/> produce you need by filling the form below. Once you are done filling, please click on the submit button<br/> and we will reach out to you with your invoice in less than an hour.</p>
-            <p style={{fontSize:'18px'}}>We pride ourselves with swift response and business conclusions, so, your order will be supplied to your<br/> company within <strong>3 days</strong> of getting your payment.</p>
-            <p style={{fontSize:'18px'}}>Ensure that you make your payment promptly because, payment validates order. Thank you.</p>
-          </div>
+        <div style={{marginTop:'20px'}}>
+          <button className='btn btn-dark' onClick={logout}>Log Out</button>
         </div>
+          <div style={{textAlign: 'center', marginBottom: '40px'}}>
+            <h4 style={{marginBottom:'20px'}}>Welcome, {exporterDetails.companyName}.</h4>
+            <p>We are glad to have you at Agriverse, and we hope we have a longlasting business relationship with you.</p>
+            <p>Below are the current prices of the farm produce we are into, kindly let us know the quantity of each<br/> produce you need by filling the form below. Once you are done filling, please click on the submit button<br/> and we will reach out to you with your invoice in less than an hour.</p>
+            <p>We pride ourselves with swift response and business conclusions, so, your order will be supplied to your<br/> company within <strong>3 days</strong> of getting your payment.</p>
+            <p>Ensure that you make your payment promptly because, payment validates order. Thank you.</p>
+          </div>
       </div>
       
       <div style={{marginTop:'30px', marginBottom:'30px', textAlign:'center'}}>{message}</div>

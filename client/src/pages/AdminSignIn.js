@@ -51,7 +51,7 @@ const AdminSignIn = ()=>{
                     <input type="text" className='form-control my-2' placeholder='Admin Name' value={admin} onChange={(e)=>setadmin(e.target.value)} style={inpStyle}/>
 
                     <label style={labelStyle}><strong>Password</strong></label>
-                    <input style={inpStyle} type="text" className='form-control my-2' placeholder='Password' value={password} onChange={(e)=>setpassword(e.target.value)}/>
+                    <input style={inpStyle} type="password" className='form-control my-2' placeholder='Password' value={password} onChange={(e)=>setpassword(e.target.value)}/>
                     
                     <button className='btn mt-4 w-100 p-2 justify-center' style={btnStyle} onClick={signIn}>LOG IN</button>
                 </div>

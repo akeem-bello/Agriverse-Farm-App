@@ -12,7 +12,7 @@ const saltRound = 10;
 exporterSchema.pre('save', function(next){
     bcrypt.hash(this.password, saltRound, (err, hashedPassword)=>{
         if(err){
-            console.log('err')
+            console.log(err)
         }else{
             this.password = hashedPassword;
             next()

@@ -11,7 +11,7 @@ function Contact() {
     const submitMessage = ()=>{
         axios.post(url, contactUs).then((res)=>{
         if(res.data.status){
-            alert('Your message has been successfully submitted. We will respond to you shortly.');
+            alert('Your message has been successfully submitted, we will respond to you shortly.');
             setname('');
             setemail('');
             setmessage('');
@@ -32,7 +32,7 @@ function Contact() {
                 </div>
                 <div className="col-4" style={{textAlign:'center'}}>
                     <div><i className="fa-solid fa-phone"></i></div>
-                    <div>+2347066163713</div>
+                    <div>+1(587) 575-2039</div>
                 </div>
                 <div className="col-4" style={{textAlign:'center'}}>
                     <div><i className="fa-solid fa-envelope"></i></div>
